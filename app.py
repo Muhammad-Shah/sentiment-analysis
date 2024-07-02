@@ -20,16 +20,43 @@ with open('tokenizer.pickle', 'rb') as handle:
 
 
 def remove_html(text):
+    """
+    Removes HTML tags from the input text.
+
+    Parameters:
+        text (str): The input text from which HTML tags will be removed.
+
+    Returns:
+        str: The input text with HTML tags removed.
+    """
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
 
 
 def remove_url(text):
+    """
+    Removes URLs from the input text.
+
+    Parameters:
+        text (str): The input text from which URLs will be removed.
+
+    Returns:
+        str: The input text with all URLs removed.
+    """
     url = re.compile(r'https?://\S+|www\.\S+')
     return url.sub(r'', text)
 
 
 def remove_punctuations(text):
+    """
+    Removes punctuation from the given text.
+
+    Parameters:
+        text (str): The input text from which punctuation will be removed.
+
+    Returns:
+        str: The input text with all punctuation removed.
+    """
     punctuations = string.punctuation
     no_punctuations = "".join(
         [char for char in text if char not in punctuations])
@@ -37,6 +64,15 @@ def remove_punctuations(text):
 
 
 def chat_conversation(text):
+    """
+    Replaces chat words in the given text with their corresponding replacements from the chatwords dictionary.
+
+    Parameters:
+        text (str): The input text to process.
+
+    Returns:
+        str: The processed text with chat words replaced.
+    """
     new_text = []
     for word in text.split():
         if word.upper() in chatwords:
@@ -49,6 +85,19 @@ def chat_conversation(text):
 
 
 def preprocess(text):
+    """
+    Preprocesses the given text by performing the following steps:
+    1. Converts the text to lowercase.
+    2. Removes HTML tags from the text using the `remove_html` function.
+    3. Removes URLs from the text using the `remove_url` function.
+    4. Removes punctuations from the text using the `remove_punctuations` function.
+
+    Args:
+        text (str): The input text to be preprocessed.
+
+    Returns:
+        str: The preprocessed text.
+    """
     text = chat_conversation(text)
     text = text.lower()
     text = remove_html(text)
@@ -58,6 +107,15 @@ def preprocess(text):
 
 
 def prepare_input(text):
+    """
+    Prepares the input text for processing.
+
+    Args:
+        text (str): The input text to be preprocessed.
+
+    Returns:
+        numpy.ndarray: The padded sequences of the preprocessed text.
+    """
     preprocessed_text = preprocess(text)
     sequences = tokenizer.texts_to_sequences([preprocessed_text])
     padded_sequences = pad_sequences(sequences, maxlen=200)
@@ -150,17 +208,19 @@ def main():
             # Display sentiment with emoticon
             if sentiment == 'positive':
                 st.write(
-                    f"### The review is: {sentiment} :smile: with {confidence} confidence.")
+                    f"### The review is: {sentiment} :smile:")
+                st.write(f"Accurcy : {confidence}")
             else:
                 st.write(
-                    f"### The review is: {sentiment} :disappointed: with {confidence} confidence.")
+                    f"### The review is: {sentiment} :disappointed:")
+                st.write(f"Accurcy : {confidence}")
 
-            # Additional feedback
-            if sentiment == 'positive':
-                st.balloons()
-                st.write("That's great to hear! Keep spreading positivity.")
-            else:
-                st.write("Sorry to hear that. Hope things get better!")
+            # # Additional feedback
+            # if sentiment == 'positive':
+            #     st.balloons()
+            #     st.write("That's great to hear! Keep spreading positivity.")
+            # else:
+            #     st.write("Sorry to hear that. Hope things get better!")
 
 
 if __name__ == '__main__':
