@@ -14,7 +14,7 @@ with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 # Load the trained model
-with open('sentiment_model.pkl', 'rb') as file:
+with open('sentiment.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
