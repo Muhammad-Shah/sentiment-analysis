@@ -213,7 +213,7 @@ def main():
             else:
                 st.write(
                     f"### The review is: {sentiment} :disappointed:")
-                st.write(f"Accurcy : {confidence}")
+                st.write(f"Accuracy : {confidence}")
 
             # # Additional feedback
             # if sentiment == 'positive':
