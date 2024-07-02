@@ -7,6 +7,7 @@ import pickle
 import string
 import re
 import streamlit as st
+from variables import chatwords
 
 LABELS = ['negative', 'positive']
 
