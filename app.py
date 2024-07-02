@@ -155,7 +155,7 @@ def main():
                     f"### The review is {sentiment} :disappointed: with {confidence} confidence.")
 
             # Additional feedback
-            if sentiment == 'positive':
+            if sentiment == 'Positive':
                 st.balloons()
                 st.write("That's great to hear! Keep spreading positivity.")
             else:
