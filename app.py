@@ -144,7 +144,8 @@ def main():
             # Get the prediction probability and class
             pred_prob = output[0][0]
             sentiment = LABELS[int(pred_prob > 0.5)]
-            confidence = f"{pred_prob:.2f}" if pred_prob > 0.5 else f"{(1 - pred_prob):.2f}"
+            # confidence = f"{pred_prob:.2f}" if pred_prob > 0.5 else f"{(1 - pred_prob):.2f}"
+            confidence = f"{pred_prob * 100:.0f}%" if pred_prob > 0.5 else f"{(1 - pred_prob) * 100:.0f}%"
 
             # Display sentiment with emoticon
             if sentiment == 'positive':
