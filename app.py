@@ -1,5 +1,4 @@
 import numpy as np
-from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 import pickle
@@ -9,12 +8,14 @@ import streamlit as st
 from variables import chatwords  # Assuming chatwords is defined in variables
 
 LABELS = ['negative', 'positive']
-# Load the trained model
-model = load_model('sentiment_model.h5')
 
 # Load the saved Tokenizer
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
+
+# Load the trained model
+with open('sentiment_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 
 def remove_html(text):
@@ -102,7 +103,7 @@ def main():
             inputs = prepare_input(text_input)
             output = model.predict(inputs)
             # Get the prediction probability and class
-            pred_prob = output[0][0]
+            pred_prob = output[0]
             sentiment = LABELS[int(pred_prob > 0.5)]
             st.write(
                 f'The review is: {sentiment} with {pred_prob:.2f} confidence.')
