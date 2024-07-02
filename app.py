@@ -192,7 +192,7 @@ def main():
 
     # User input
     text_input = st.text_area(
-        '', placeholder="I'm so glad I took the time to watch this movie")
+        'Enter a review', placeholder="")
 
     # Analyze sentiment
     if st.button('Analyze'):
