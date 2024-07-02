@@ -9,7 +9,7 @@ import re
 import streamlit as st
 from variables import chatwords
 
-LABELS = ['Negative', 'Positive']
+LABELS = ['negative', 'positive']
 
 # Load the trained model
 model = load_model('sentiment.h5')
@@ -147,15 +147,15 @@ def main():
             confidence = f"{pred_prob:.2f}" if pred_prob > 0.5 else f"{(1 - pred_prob):.2f}"
 
             # Display sentiment with emoticon
-            if sentiment == 'Positive':
+            if sentiment == 'positive':
                 st.write(
-                    f"### The review is {sentiment} :smile: with {confidence} confidence.")
+                    f"### The review is: {sentiment} :smile: with {confidence} confidence.")
             else:
                 st.write(
-                    f"### The review is {sentiment} :disappointed: with {confidence} confidence.")
+                    f"### The review is: {sentiment} :disappointed: with {confidence} confidence.")
 
             # Additional feedback
-            if sentiment == 'Positive':
+            if sentiment == 'positive':
                 st.balloons()
                 st.write("That's great to hear! Keep spreading positivity.")
             else:
