@@ -210,6 +210,7 @@ def main():
                 st.write(
                     f"### The review is: {sentiment} :smile:")
                 st.write(f"Accurcy : {confidence}")
+                st.balloons()
             else:
                 st.write(
                     f"### The review is: {sentiment} :disappointed:")
