@@ -82,7 +82,7 @@ def main():
     """
 
     # User input
-    text_input = st.text_input(
+    text_input = st.text_area(
         'Enter a sentence:', placeholder='Movie was fantastic!')
 
     # Analyze sentiment
