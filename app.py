@@ -11,8 +11,8 @@ from variables import chatwords  # Assuming chatwords is defined in variables
 LABELS = ['negative', 'positive']
 
 # Load the saved Tokenizer
-with open('tokenizer.pickle', 'rb') as handle:
-    tokenizer = pickle.load(handle)
+# with open('tokenizer.pickle', 'rb') as handle:
+#     tokenizer = pickle.load(handle)
 
 # Load the trained model
 with open('sentiment.pkl', 'rb') as file:
