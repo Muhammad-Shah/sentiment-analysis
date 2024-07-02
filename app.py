@@ -192,7 +192,7 @@ def main():
 
     # User input
     text_input = st.text_area(
-        '', placeholder='Movie was fantastic!')
+        '', placeholder='This movie was totally worth my time!')
 
     # Analyze sentiment
     if st.button('Analyze'):
