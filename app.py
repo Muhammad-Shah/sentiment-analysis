@@ -95,7 +95,7 @@ def main():
             sentiment = LABELS[int(pred_prob > 0.5)]
             # st.write(f'The review is: {sentiment} with {pred_prob:.2f} confidence.')
             st.write(
-                f'The review is: {sentiment} with a probability of {int(pred_prob.max().item() * 100)}% confidence.')
+                f'The review is: {sentiment} with {int(pred_prob.max().item() * 100)}% confidence.')
 
 
 if __name__ == '__main__':
