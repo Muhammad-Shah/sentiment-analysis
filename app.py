@@ -9,7 +9,7 @@ import re
 import streamlit as st
 from variables import chatwords
 
-LABELS = ['negative', 'positive']
+LABELS = ['Negative', 'Positive']
 
 # Load the trained model
 model = load_model('sentiment.h5')
@@ -71,7 +71,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #698474;
+        background-color: #973131;
         padding: 20px;
         border-radius: 10px;
     }
@@ -149,10 +149,10 @@ def main():
             # Display sentiment with emoticon
             if sentiment == 'positive':
                 st.write(
-                    f"### The review is: {sentiment} :smile: with {confidence} confidence.")
+                    f"### The review is {sentiment} :smile: with {confidence} confidence.")
             else:
                 st.write(
-                    f"### The review is: {sentiment} :disappointed: with {confidence} confidence.")
+                    f"### The review is {sentiment} :disappointed: with {confidence} confidence.")
 
             # Additional feedback
             if sentiment == 'positive':
