@@ -10,7 +10,7 @@ import streamlit as st
 from variables import chatwords
 
 LABELS = ['negative', 'positive']
-      
+
 # Load the trained model
 model = load_model('sentiment.h5')
 
@@ -71,7 +71,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #f5f5f5;
+        background-color: #698474;
         padding: 20px;
         border-radius: 10px;
     }
@@ -85,6 +85,16 @@ st.markdown(
     }
     .stButton>button:hover {
         background-color: #45a049;
+    }
+    .title {
+        color: #FF6347; /* Tomato */
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .subtitle {
+        color: #4682B4; /* SteelBlue */
+        font-size: 24px;
+        margin-bottom: 20px;
     }
     </style>
     """,
@@ -101,9 +111,9 @@ st.sidebar.markdown("""
 3. See the result with an emotion icon and confidence score.
 """)
 
-st.title('Sentiment Analysis App')
-st.markdown(
-    "Analyze the sentiment of your text and see if it's positive or negative!")
+st.markdown('<div class="title">Sentiment Analysis App</div>',
+            unsafe_allow_html=True)
+# st.markdown('<div class="subtitle">Analyze the sentiment of your text and see if it\'s positive or negative!</div>', unsafe_allow_html=True)
 
 
 def main():
@@ -124,7 +134,7 @@ def main():
 
     # User input
     text_input = st.text_area(
-        'Enter a sentence:', placeholder='Movie was fantastic!')
+        '', placeholder='Movie was fantastic!')
 
     # Analyze sentiment
     if st.button('Analyze'):
