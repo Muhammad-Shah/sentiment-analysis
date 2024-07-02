@@ -147,7 +147,7 @@ def main():
             confidence = f"{pred_prob:.2f}" if pred_prob > 0.5 else f"{(1 - pred_prob):.2f}"
 
             # Display sentiment with emoticon
-            if sentiment == 'positive':
+            if sentiment == 'Positive':
                 st.write(
                     f"### The review is {sentiment} :smile: with {confidence} confidence.")
             else:
