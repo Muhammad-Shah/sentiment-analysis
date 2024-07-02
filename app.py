@@ -10,7 +10,7 @@ from variables import chatwords  # Assuming chatwords is defined in variables
 
 LABELS = ['negative', 'positive']
 # Load the trained model
-model = load_model('sentiment.h5')
+model = load_model('sentiment_model.h5')
 
 # Load the saved Tokenizer
 with open('tokenizer.pickle', 'rb') as handle:
