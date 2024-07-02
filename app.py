@@ -15,9 +15,7 @@ with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 # Load the trained model
-with open('sentiment.pkl', 'rb') as file:
-    model = pickle.load(file)
-
+model = load_model('sentiment.h5')
 
 def remove_html(text):
     """
