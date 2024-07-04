@@ -49,6 +49,10 @@ Sentiment analysis is a technique used to determine the emotional tone or attitu
 
 This project is deployed on Streamlit. You can access it [here](https://sentiment-analysis-movie.streamlit.app/).
 
+## Demo
+
+<img src="artifacts/demo pic.png">
+
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
@@ -56,4 +60,3 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
