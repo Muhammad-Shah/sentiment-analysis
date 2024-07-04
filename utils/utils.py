@@ -1,3 +1,8 @@
+from utils.variables import chatwords
+import re
+import string
+
+
 def remove_html(text):
     """
     Removes HTML tags from the input text.
