@@ -20,7 +20,7 @@ Sentiment analysis is a technique used to determine the emotional tone or attitu
 - Supports text data preprocessing, including removing chatwords, HTML tags, URLs, and punctuations.
 - Uses deep learning techniques, specifically LSTM, to classify text data as positive or negative sentiment.
 - Provides a user-friendly interface for loading and analyzing text data.
-- Offers visualization of sentiment scores and classifications.
+- Offers visualization of sentiment scores and classifications. 
 
 ## Installation
 
