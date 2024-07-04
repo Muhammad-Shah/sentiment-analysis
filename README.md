@@ -20,7 +20,7 @@ Sentiment analysis is a technique used to determine the emotional tone or attitu
 - Supports text data preprocessing, including removing chatwords, HTML tags, URLs, and punctuations.
 - Uses deep learning techniques, specifically LSTM, to classify text data as positive or negative sentiment.
 - Provides a user-friendly interface for loading and analyzing text data.
-- Offers visualization of sentiment scores and classifications. 
+- Offers visualization of sentiment scores and classifications.
 
 ## Installation
 
@@ -44,6 +44,10 @@ Sentiment analysis is a technique used to determine the emotional tone or attitu
 4. Tokenize the sentences into words.
 5. Train an LSTM model on the preprocessed data.
 6. Use the trained model to classify the text data as positive or negative sentiment.
+
+## Deployment
+
+This project is deployed on Streamlit. You can access it [here](https://sentiment-analysis-movie.streamlit.app/).
 
 ## Contributing
 
